@@ -6,9 +6,12 @@ module.exports = {
       colors: {
         PanelBg: '#202c33',
         PanelIcon: '#aebac1',
-        BgGeneral: '#101a20'
+        BgGeneral: '#101a20',
+        colorText1: '#E9EDEF',
+        colorText2: '#D1D7DB',
+        colorHour: '#8696A0'
       }
     },
   },
-  plugins: [require("daisyui")],
+  plugins: [require("daisyui"), require('tailwind-scrollbar'),],
 }

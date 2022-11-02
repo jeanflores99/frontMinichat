@@ -1,7 +1,7 @@
 import { Search, Filter } from '@svg/index'
 export const ChatSearch = () => {
   return (
-    <div className="px-3 py-[6px] w-full h-[49px] flex flex-row items-center">
+    <div className="px-3 py-[6px] w-full h-[49px] flex flex-row items-center bg-BgGeneral">
       <div className="rounded-lg w-full h-full bg-PanelBg flex flex-row items-center justify-around ">
         <div className="w-[10%] flex items-center  ">
           <Search className="w-6 h-6 mx-auto" />

@@ -1,5 +1,5 @@
 import { Container } from './container'
 import { HeadTsx } from './head'
-import { ChatListHeader, ChatSearch } from './ChatList'
+import { ChatListHeader, ChatSearch, ChatPreview } from './ChatList'
 
-export { Container, HeadTsx, ChatListHeader, ChatSearch }
+export { Container, HeadTsx, ChatListHeader, ChatSearch, ChatPreview }
