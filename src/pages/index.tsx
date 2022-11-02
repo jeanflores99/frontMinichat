@@ -1,36 +1,19 @@
-import {
-  Container,
-  HeadTsx,
-  ChatListHeader,
-  ChatSearch,
-  ChatPreview,
-} from '@components/index'
-import { DataChatPreview } from '@mock/dataChatPreview'
+import { HeadTsx, WrapperChat, WrapperChatList } from '@components/index'
 export default function Home() {
   return (
     <div className="">
       <HeadTsx />
-      <main className="">
-        <Container>
-          <div className=" flex flex-row">
-            <div className="max-w-[480px] w-[30%] min-w-[346px] h-screen overflow-y-scroll  scrollbar-thumb-colorHour scrollbar-track-transparent scrollbar-custom">
-              <div className='sticky top-0 z-50'>
-                {/* Header Chat List */}
-                <ChatListHeader />
-                {/* Buscador del cat */}
-                <ChatSearch />
-              </div>
-
-              {/* Chat List */}
-              <div className="flex flex-col ">
-                {DataChatPreview.map((obj, key) => (
-                  <ChatPreview {...obj} key={key} />
-                ))}
-              </div>
+      <main className="relative w-full h-screen ">
+        <div className="absolute  top-0 w-full h-full py-[3px] px-[54px] ">
+          <div className=" flex flex-row  h-full ">
+            <div className="max-w-[480px] w-[30%] min-w-[346px] h-full relative">
+              <WrapperChatList />
             </div>
-            <div className=" w-[70%] "></div>
+            <div className="w-[70%] pt-4">
+              <WrapperChat />
+            </div>
           </div>
-        </Container>
+        </div>
       </main>
     </div>
   )
