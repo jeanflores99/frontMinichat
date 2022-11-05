@@ -8,7 +8,7 @@ export const StatusUnRead = (props: SVGProps<SVGSVGElement>) => (
     id="df9d3429-f0ef-48b5-b5eb-f9d27b2deba6"
     x="0px"
     y="0px"
-    enable-background="new 0 0 24 24"
+    enableBackground="new 0 0 24 24"
     xmlSpace="preserve"
     {...props}
   >

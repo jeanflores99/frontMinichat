@@ -1,5 +1,24 @@
-import React from 'react'
-
+import { Carita, Clip, Microphone } from '@svg/index'
 export const ChatFooter = () => {
-  return <div>chatFooter</div>
+  return (
+    <div className="w-full h-[62px]  flex flex-row items-center justify-around  bg-PanelBg">
+      <div className="w-[94px]  ml-2 h-[40px]  flex flex-row items-center justify-around">
+        <Carita className="w-[26px] h-[26px]" />
+        <Clip className="w-[24px] h-[24px]" />
+      </div>
+      {/* <div className="w-[40px] h-[40px] flex items-center justify-center"> */}
+      {/* </div> */}
+      <div className="w-full h-[42px] p-[10px] bg-BgInput rounded-lg">
+        <input
+          type={'text'}
+          placeholder="Escriba un mensaje aquí"
+          className="w-full h-full  bg-transparent outline-none"
+        />
+      </div>
+
+      <div className="w-[52px] h-[40px] flex items-center justify-center mr-2">
+        <Microphone className="w-[24px] h-[24px]" />
+      </div>
+    </div>
+  )
 }

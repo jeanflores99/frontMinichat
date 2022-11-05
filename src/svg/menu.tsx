@@ -8,7 +8,7 @@ export const Menu = (props: SVGProps<SVGSVGElement>) => (
     x="0px"
     y="0px"
     {...props}
-    enable-background="new 0 0 24 24"
+    enableBackground="new 0 0 24 24"
     xmlSpace="preserve"
   >
     <path
