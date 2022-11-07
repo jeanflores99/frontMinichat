@@ -12,6 +12,7 @@ export interface IChats {
   user: string
   message: string
   me?: boolean
+  // alias: string
 }
 
 export interface IData {
@@ -24,8 +25,9 @@ export interface IContext {
 }
 
 export const InitialValue: IData = {
-  meAlias: 'AliasDefault',
+  meAlias: '',
   chats: [],
+  // id: '',
 }
 
 export const ContextChat = createContext<IContext | {}>({})
@@ -35,7 +37,12 @@ interface Iprops {
 export const ChatProvider = ({ children }: Iprops) => {
   const [data, setData] = useState<IData>(InitialValue)
 
-  useEffect(() => {}, [data])
+  useEffect(() => {
+    console.log('efect data')
+  }, [data])
+  useEffect(() => {
+    console.log('eeffct alias')
+  }, [data.meAlias])
 
   return (
     <ContextChat.Provider value={{ data, setData }}>

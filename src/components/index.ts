@@ -9,6 +9,7 @@ import {
   MessageOther,
 } from './ChatList'
 import { ChatConverstaion, ChatFooter, ChatHeader, WrapperChat } from './Chat'
+import { Show } from './others'
 export {
   Container,
   HeadTsx,
@@ -21,5 +22,6 @@ export {
   WrapperChatList,
   WrapperChat,
   MessageMe,
-  MessageOther
+  MessageOther,
+  Show,
 }

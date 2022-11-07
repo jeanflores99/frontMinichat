@@ -6,4 +6,15 @@ import { Search } from './search'
 import { Clip } from './clip'
 import { Microphone } from './microphone'
 import { Carita } from './carita'
-export { StatusUnRead, Chat, Menu, Filter, Search, Carita, Clip, Microphone }
+import { SendMessage } from './sendMessage'
+export {
+  StatusUnRead,
+  Chat,
+  Menu,
+  Filter,
+  Search,
+  Carita,
+  Clip,
+  Microphone,
+  SendMessage,
+}

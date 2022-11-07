@@ -10,9 +10,22 @@ interface Iprops {
 export const SocketProvider = ({ children }: Iprops) => {
   const { data, setData } = ContextChatConfig() as IContext
   useEffect(() => {
-    socket.on('message', (newmsg: IChats) => {
-      const previousChats = data.chats 
-      previousChats.push(newmsg)
+    socket.on('message', ({ message, user }: IChats) => {
+      const previousChats = data.chats
+      const currentMsg: IChats = {
+        message: message,
+        user: data.meAlias,
+      }
+      console.log(data)
+      console.log(user)
+      
+
+      // const currentMssg = Object.assign(newmsg, {
+      //   me: true,
+      //   user: data.meAlias,
+      // })
+      previousChats.push(currentMsg)
+      console.log(previousChats)
       setData((prev) => ({ ...prev, chats: previousChats }))
     })
     return () => {
