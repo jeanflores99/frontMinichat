@@ -5,6 +5,8 @@ import {
   ChatSearch,
   ChatPreview,
   WrapperChatList,
+  MessageMe,
+  MessageOther,
 } from './ChatList'
 import { ChatConverstaion, ChatFooter, ChatHeader, WrapperChat } from './Chat'
 export {
@@ -18,4 +20,6 @@ export {
   ChatHeader,
   WrapperChatList,
   WrapperChat,
+  MessageMe,
+  MessageOther
 }

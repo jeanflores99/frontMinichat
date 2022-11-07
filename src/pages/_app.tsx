@@ -5,10 +5,10 @@ import { ChatProvider } from '../context/ChatProvider'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <SocketProvider>
-      <ChatProvider>
+    <ChatProvider>
+      <SocketProvider>
         <Component {...pageProps} />
-      </ChatProvider>
-    </SocketProvider>
+      </SocketProvider>
+    </ChatProvider>
   )
 }

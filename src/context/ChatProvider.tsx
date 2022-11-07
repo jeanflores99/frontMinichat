@@ -4,20 +4,44 @@ import {
   ReactNode,
   SetStateAction,
   useState,
+  useContext,
+  useEffect,
 } from 'react'
-interface ICtx {
-  chat: string[]
-  setChat: Dispatch<SetStateAction<string[]>>
+
+export interface IChats {
+  user: string
+  message: string
+  me?: boolean
 }
-export const ContextChat = createContext<ICtx | {}>({})
+
+export interface IData {
+  meAlias: string
+  chats: IChats[]
+}
+export interface IContext {
+  data: IData
+  setData: Dispatch<SetStateAction<IData>>
+}
+
+export const InitialValue: IData = {
+  meAlias: 'AliasDefault',
+  chats: [],
+}
+
+export const ContextChat = createContext<IContext | {}>({})
 interface Iprops {
   children: ReactNode
 }
 export const ChatProvider = ({ children }: Iprops) => {
-  const [chat, setChat] = useState()
+  const [data, setData] = useState<IData>(InitialValue)
+
+  useEffect(() => {}, [data])
+
   return (
-    <ContextChat.Provider value={{ chat, setChat }}>
+    <ContextChat.Provider value={{ data, setData }}>
       {children}
     </ContextChat.Provider>
   )
 }
+
+export const ContextChatConfig = () => useContext(ContextChat)

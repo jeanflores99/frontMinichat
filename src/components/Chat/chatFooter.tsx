@@ -1,10 +1,17 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Carita, Clip, Microphone } from '@svg/index'
-import { useContext } from 'react'
-import { ContextSocket } from '@context/SocketProvider'
+import { ContextSocket, ContextSocketConfig } from '@context/SocketProvider'
+
+const InitialValue = {
+  user: '',
+  message: '',
+}
+
 export const ChatFooter = () => {
-  const { Socket } = useContext(ContextSocket)
-  const [message, setMessage] = useState('')
+  const { Socket } = ContextSocketConfig()
+  const [data, setdata] = useState(InitialValue)
+
+  // useEffect(() => {}, [message])
 
   return (
     <div className="w-full h-[62px]  flex flex-row items-center justify-around  bg-PanelBg">
@@ -17,7 +24,9 @@ export const ChatFooter = () => {
       <div className="w-full h-[42px] p-[10px] bg-BgInput rounded-lg">
         <input
           type={'text'}
-          onChange={({ target }) => setMessage(target.value)}
+          name="message"
+          onChange={({ target }) => setdata({ ...data, message: target.value })}
+          value={data?.message || ''}
           placeholder="Escriba un mensaje aquí"
           className="w-full h-full  bg-transparent outline-none"
         />
@@ -25,7 +34,10 @@ export const ChatFooter = () => {
 
       <div
         className="w-[52px] h-[40px] flex items-center justify-center mr-2"
-        onClick={() => Socket.emit('message', message)}
+        onClick={() => {
+          Socket.emit('message', data)
+          setdata(InitialValue)
+        }}
       >
         <Microphone className="w-[24px] h-[24px]" />
       </div>
